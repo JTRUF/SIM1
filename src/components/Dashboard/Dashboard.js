@@ -29,9 +29,14 @@ class Dashboard extends Component {
     }
     
     render(){ 
+        const inventory = props.inventory_list.map(element => {
+            return (
+                <Product one = {element}/>
+            )
+        })
+
         return( 
             <div>Dashboard
-                <Product/>
                 <input value={this.state.image_URL}
                     placeholder='URL' 
                     ref='image_URL'

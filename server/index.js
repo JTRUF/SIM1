@@ -9,8 +9,8 @@ const app = express()
 app.use(bodyParser.json())
 massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db', dbInstance));
 
-// app.get('/')
-// app.post('/')
+app.get('/api/inventory', controller.get)
+app.post('/api/product', controller.create)
 // app.put('/')
 // app.delete('/')
 
